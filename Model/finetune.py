@@ -91,7 +91,8 @@ def finetune_model(
 
         progress = tqdm(
             trainloader,
-            desc=f"Epoch {epoch + 1}/{numEpochs} - Training"
+            desc=f"Epoch {epoch + 1}/{numEpochs} - Training",
+            unit="Batch"
         )
 
         for images, labels in progress:
