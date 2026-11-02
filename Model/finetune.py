@@ -11,7 +11,8 @@ def finetune_model(
     numEpochs=10,
     learning_rate=1e-4,
     encoder_lr=1e-5,
-    save_path="best_resnet50.pth",
+    input_path=None,
+    save_path="best_resnet50_finetuned.pth",
     device=None
 ):
     """
@@ -36,6 +37,15 @@ def finetune_model(
         device = torch.device(
             "cuda" if torch.cuda.is_available() else "cpu"
         )
+    if input_path is not None:
+            state_dict = torch.load(
+                input_path,
+                map_location=device,
+                weights_only=True
+            )
+    
+            model.load_state_dict(state_dict)
+            print(f"Loaded pretrained weights from {input_path}")
 
     model = model.to(device)
 
@@ -172,3 +182,5 @@ def finetune_model(
     model.load_state_dict(best_model_weights)
 
     return model, history
+
+
