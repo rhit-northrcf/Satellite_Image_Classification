@@ -3,7 +3,7 @@ import torch
 from tqdm.auto import tqdm
 
 
-def finetune_model(
+def finetune_models(
     model,
     trainloader,
     validloader,
@@ -13,7 +13,8 @@ def finetune_model(
     encoder_lr=1e-5,
     input_path=None,
     save_path="best_resnet50_finetuned.pth",
-    device=None
+    device=None,
+    prev_best = None
 ):
     """
     Args:
@@ -78,7 +79,7 @@ def finetune_model(
         }
     ])
 
-    best_valid_loss = float("inf")
+    best_valid_loss = float("inf") if prev_best is None else prev_best
     best_model_weights = copy.deepcopy(model.state_dict())
 
     history = {
@@ -181,6 +182,6 @@ def finetune_model(
     # Restore the best-performing weights.
     model.load_state_dict(best_model_weights)
 
-    return model, history
+    return model, history, best_valid_loss
 
 

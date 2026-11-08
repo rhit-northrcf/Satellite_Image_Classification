@@ -1,0 +1,9 @@
+{
+  "previous_checkpoint": "Model State Archives/95.7%Acc.pth",
+  "new_checkpoint": "Model State Archives/96.6%Acc.pth",
+  "old_accuracy": 71.77,
+  "new_accuracy": 95.4,
+  "improvement_percentage_points": 23.63,
+  "noise_transform": "x + 0.2*torch.randn_like(x)",
+  "stochastic_run_caveat": "Independent random draws of Gaussian noise; exact results vary"
+}

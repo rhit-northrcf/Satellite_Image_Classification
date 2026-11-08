@@ -1,0 +1,24 @@
+/* Night Flight v7: checkpoint and noise-result callouts. */
+.best-epoch-banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 3px;padding:11px 15px;border:1px solid #dbcaef;border-radius:12px;background:#f7f0ff;color:#4d397b;font:600 11px var(--mono);letter-spacing:.3px}
+.best-epoch-banner .best-epoch-icon{color:#c24eaa;font-size:22px;line-height:1}
+.best-epoch-banner strong{font:700 14px var(--display);color:#6334a8;letter-spacing:0}
+.best-epoch-banner small{margin-left:auto;color:#8774a3;font:10px var(--mono)}
+.noise-feature{margin:25px 0 27px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:22px;padding:27px;border-radius:19px;background:linear-gradient(118deg,#2f276d,#4b348c 58%,#6248a8);color:#fff;box-shadow:0 17px 40px #382e7333}
+.noise-eyebrow{font:10px var(--mono);color:#e9d799;letter-spacing:1.25px}
+.noise-feature h4{font:700 clamp(24px,2.4vw,35px)/1.1 var(--display);letter-spacing:-1.1px;margin:12px 0 11px}
+.noise-feature h4 em{font-style:normal;color:#b9f3e3}
+.noise-feature p{color:#e4ddfa;font-size:13px;max-width:460px;line-height:1.7;margin:0 0 17px}
+.noise-delta{font:700 31px var(--display);color:#d7ffc0;letter-spacing:-.6px;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.noise-delta span{max-width:155px;color:#eeebfd;font:11px/1.4 var(--body);letter-spacing:0}
+.noise-compare{display:flex;flex-direction:column;justify-content:center;gap:23px;padding:16px;border:1px solid #ffffff30;background:#ffffff12;border-radius:14px}
+.compare-row>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.compare-row span{color:#d6cff4;font:10px var(--mono);letter-spacing:.35px}
+.compare-row strong{color:#fff;font:700 21px var(--display)}
+.compare-track{height:13px;border-radius:99px;background:#19144390;overflow:hidden}
+.compare-track i{display:block;height:100%;border-radius:99px;transition:width .3s}
+.compare-track i.previous{background:linear-gradient(90deg,#f78a7f,#ffd19b)}
+.compare-track i.current{background:linear-gradient(90deg,#71d9c5,#c5ffad)}
+.noise-compare>small{color:#c9c1e9;font:10px/1.5 var(--body)}
+.robust-row-featured{background:#f2edff;box-shadow:inset 3px 0 #7961e8;border-radius:7px;padding-inline:12px;margin-inline:-12px}
+@media(max-width:860px){.noise-feature{grid-template-columns:1fr;padding:22px}.noise-compare{padding:18px}}
+@media(max-width:600px){.best-epoch-banner{gap:5px 9px}.best-epoch-banner small{width:100%;margin-left:0}.noise-feature{padding:18px;gap:12px}.noise-feature h4{font-size:27px}.robust-row-featured{padding-inline:5px;margin-inline:-5px}}

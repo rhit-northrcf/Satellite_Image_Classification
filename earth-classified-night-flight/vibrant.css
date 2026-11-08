@@ -1,0 +1,148 @@
+/* Version 5: A colorful, friendly satellite project showcase.
+   Applied after the previous layout files; keeps all data and interactions. */
+:root{
+  --bg:#fffaf5; --panel:#ffffff; --panel-2:#f5f2ff; --panel-3:#ece8ff;
+  --cream:#20254c; --muted:#75799a; --line:#e7e2f1;
+  --lime:#5046ed; --forest:#443cbc; --blue:#5146ed;
+  --coral:#fc674f; --ink:#22264c; --subtle:#656b8a;
+  --phase-1:#e4e7ff; --phase-2:#dbf6f6; --phase-3:#f2e0fd;
+  --phase-4:#ffe5d6; --phase-5:#e5f3d9;
+}
+body{background:var(--bg);color:var(--ink)}
+.site-header{background:rgba(255,250,245,.96);border-color:#eae4f3;box-shadow:none}
+.brand{color:var(--ink)}
+.brand-icon i{background:#5548ea}
+.brand-icon i:nth-child(2){background:#ff6856}
+.brand-icon i:nth-child(3){background:#3ccbb5}
+.brand-icon i:last-child{border-color:#ff6856}
+.nav-links{color:#575f7a}
+.nav-cta{background:#5548ea;border-color:#5548ea;color:#fff;border-radius:100px;padding:12px 21px;font-family:var(--body);letter-spacing:0}
+.nav-cta:hover{background:#3e34c9}
+.green-text{color:#ff6856}
+.hero{padding-top:76px;padding-bottom:90px;gap:5%;isolation:isolate}
+.hero::before{top:-2%;left:-16%;width:73%;height:108%;background:radial-gradient(ellipse at 42% 55%,rgba(239,234,255,.9),rgba(255,246,235,.42) 55%,transparent 75%)}
+.hero::after{content:'';pointer-events:none;position:absolute;z-index:-1;right:-35px;top:35px;width:160px;height:160px;border-radius:50%;background:#ffec9a;opacity:.7}
+.overline{display:inline-flex;background:#ebe7ff;border:1px solid #dad4ff;color:#5146cf;letter-spacing:.55px;padding:8px 13px;border-radius:50px;font-size:10px;white-space:normal}
+.signal-dot{background:#ff6e51;box-shadow:0 0 0 3px rgba(255,110,81,.17)}
+.overline-divider{color:#ff6e51}
+h1{font-size:clamp(64px,6.8vw,104px);letter-spacing:-6.5px;line-height:1.02;margin:24px 0 22px;max-width:690px}
+h1 em{font-style:normal;background:linear-gradient(98deg,#5546e9 9%,#9574f2 56%,#f46f75 100%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero-intro{max-width:520px;font-size:18px;line-height:1.7;color:#596480}
+.hero-intro strong{color:#252d5a}
+.hero-actions{margin:26px 0 0}
+.btn{border-radius:100px;padding:15px 22px;gap:20px;min-width:158px}
+.btn.primary{background:#5548ea;border-color:#5548ea;color:#fff;box-shadow:0 10px 24px rgba(85,72,234,.2)}
+.btn.primary:hover{background:#4031ce}
+.btn.secondary{background:#fff;border:1px solid #cfcaf1;color:#5144c3}
+.btn.secondary:hover{background:#f0edff}
+.hero-meta{display:none}
+.hero-display{border:5px solid #fff;background:#242449;box-shadow:13px 17px 0 #d7cfff,0 32px 70px rgba(45,45,94,.19);transform:rotate(1.25deg);border-radius:17px}
+.display-toolbar,.display-footer{background:#302c65;color:#e6e1ff}
+.display-toolbar{border-color:#5c548f;border-radius:10px 10px 0 0}
+.display-footer{border-color:#5c548f;border-radius:0 0 10px 10px}
+.display-cross{color:#ffb887}
+.sat-grid{background:#302c65}
+.hero-floating{right:-20px;bottom:-42px;background:#ffe479;border:2px solid #fff;border-radius:16px;color:#542f37;box-shadow:0 12px 35px rgba(81,69,160,.18);transform:rotate(-3deg)}
+.hero-floating strong{color:#282348}
+.floating-tag,.floating-sub{color:#644952}
+/* Let the samples and their results lead; skip redundant introductory stat strip. */
+.ticker{display:none}
+.section{scroll-margin-top:90px}
+.section-kicker,.small-label{color:#5a4bea}
+.section-kicker span{color:#eda28d}
+.muted{color:#9383da}
+.overview{padding-top:95px}
+.statement{color:#454b78}
+.copy-side{color:#5c6683}
+.copy-side strong{color:#292b52}
+.research-question{background:linear-gradient(115deg,#eeecff,#ffe8de);border:1px solid #e6d8f1;border-radius:19px}
+.research-question>span{color:#594acf}
+.question-symbol{color:#ff6856;border-color:#ffbea9;background:#fff}
+.method-band{background:#f3f0ff;border-color:#e8e0fb}
+.section-heading>p{color:#626a86}
+.flow-card{border:1px solid #e3dcfb;background:#fff;border-radius:16px;box-shadow:0 8px 28px rgba(79,55,150,.055)}
+.flow-emphasis{background:#e9e6ff;border-color:#b7a9ff;box-shadow:0 9px 25px rgba(75,60,191,.1)}
+.flow-number,.flow-symbol{color:#5848e7}
+.flow-card:not(:nth-of-type(4)):after{background:#f3f0ff;color:#5146ec}
+.bands-symbol span{background:#5548e8}
+.bands-symbol span:nth-child(2n){background:#ff9775}
+.bands-symbol span:nth-child(3n){background:#32c8bb}
+.specs>div,.specs>div:first-child{border-color:#dad1f4}
+.dataset{padding-top:105px;padding-bottom:105px}
+.class-card{border-radius:15px;border-color:#e4dbf5;overflow:hidden;box-shadow:0 8px 24px rgba(48,44,110,.06)}
+.class-card:hover{border-color:#9788ff;box-shadow:0 16px 32px rgba(85,70,190,.15)}
+.gallery-choices{background:#e7e1fa}
+.gallery-choice.active{background:#5548eb}
+.gallery-choice:hover{background:#ece6ff;color:#4537b8}
+.gallery-dialog{border-radius:18px}
+.gallery-close{background:#fc674f}
+.training-band{background:#f0edff;border-color:#e0d8fa}
+.training-band .section-kicker,.training-band .small-label{color:#5144cf}
+.chart-panel{border-radius:18px;border-color:#ded7f2;box-shadow:0 12px 34px rgba(77,58,153,.07)}
+.segmented{background:#efeafa;border-radius:100px}
+.segmented button{border-radius:100px;color:#655e83}
+.segmented button.active,.results .segmented button.active{background:#584ae9;color:#fff}
+.chart-stage-heading span:first-child{color:#5548df}
+.chart-tooltip{background:#26244f;border-color:#a69cf9}
+.chart-tooltip strong{color:#fae28f}
+.key-train{background:#5046df}
+.key-valid{background:#fb7356}
+.lr-rail-segment{border-top-color:#5548e8;border-radius:5px 5px 0 0}
+.lr-rail-segment:nth-child(2){border-top-color:#28b7ad}
+.lr-rail-segment:nth-child(3){border-top-color:#a66de0}
+.lr-rail-segment:nth-child(4){border-top-color:#f38759}
+.lr-rail-segment:nth-child(5){border-top-color:#69b77e}
+.lr-rail-segment strong{color:#26264f}
+.lr-rail-name{color:#585279}
+.stage-entry,.stage-entry:last-child{border-color:#d8cdf3}
+.stage-entry .lr-details{color:#5148bd}
+.metric-grid{border-radius:18px;border-color:#ebe3f3;box-shadow:0 9px 24px rgba(77,56,148,.06)}
+.metric{background:#f5f2ff;border-color:#e4daf8}
+.metric:nth-child(2){background:#e5f8f4}
+.metric:nth-child(3){background:#fff0e8}
+.metric-contrast{background:#fff0b9}
+.metric>div{color:#605f82}
+.metric strong{color:#302d72}
+.metric-contrast strong{color:#9a4c26}
+.metric-sym{color:#fc7662}
+.matrix-container{border-radius:17px;border-color:#e0d9f0}
+.matrix-inspect{background:#f1edff;border-color:#ded4fa;border-radius:12px}
+.matrix-inspect strong{color:#5041d8}
+.matrix-legend i{background:linear-gradient(90deg,#eef0ff,#5a49d9)}
+.cm-cell:hover,.cm-cell.selected{outline-color:#fc775e}
+.analysis-grid article{border-radius:16px;border-color:#e2dbf1;background:#fff}
+.analysis-grid article:nth-child(2){background:#fff4e8}
+.analysis-grid article:nth-child(3){background:#f1f4ff}
+.analysis-mark{color:#f97860}
+.robustness-key i,.robust-fill{background:#5548e8}
+.robust-fill.warning{background:#ff8264}
+.robust-track{background:#eae7f6}
+.recall-track{background:#eae7f6}
+.recall-fill{background:#6154e8}
+.recall-fill.outlier{background:#ff8b70}
+.final-band{background:linear-gradient(125deg,#332c7f,#211e52);border-color:#342f88;color:#f7f4ff}
+.final-band .section-kicker{color:#c7baff}
+.takeaway-grid>div:first-child>p{color:#ddd7ff}
+.takeaway-notes>div,.method-note{border-color:#675ba1}
+.takeaway-notes span,.method-note strong{color:#ffcb86}
+.takeaway-notes p{color:#f0eaff}
+.method-note p{color:#c5bde9}
+.final-band .btn.primary{background:#ffd875;border-color:#ffd875;color:#2b255c}
+.final-band .btn.primary:hover{background:#ffe8a3}
+.footer{background:#fffaf5;border-color:#eae3f5}
+.footer-inner>div{color:#62617d}
+@media(max-width:820px){
+ .hero{padding-top:65px;padding-bottom:90px;gap:42px}
+ .hero-display{width:calc(100% - 42px)}
+}
+@media(max-width:520px){
+ .hero{padding-top:48px;padding-bottom:81px}
+ .hero::after{width:105px;height:105px;right:0}
+ h1{font-size:clamp(52px,11.7vw,75px);letter-spacing:-3.7px}
+ .overline{font-size:9px;padding:6px 10px}
+ .hero-actions{margin-top:23px}
+ .hero-intro{font-size:16px;line-height:1.6}
+ .hero-display{width:calc(100% - 15px)}
+ .hero-floating{right:-4px;bottom:-34px}
+ .overview{padding-top:83px}
+}

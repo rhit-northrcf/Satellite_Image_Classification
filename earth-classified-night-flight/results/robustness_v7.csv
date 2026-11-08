@@ -1,0 +1,13 @@
+name,accuracy,loss,drop
+original,96.56,0.1289,0.0
+rotate 90,95.65,0.1348,0.91
+rotate 180,96.19,0.1342,0.37
+rotate 270,95.83,0.1523,0.73
+rotate 45,78.4,0.9313,18.16
+rotate 30,79.52,0.9855,17.04
+horizontal flip,95.43,0.1615,1.13
+vertical flip,95.94,0.1459,0.62
+gaussian noise,95.4,0.1535,1.16
+brightness x1.3,95.54,0.1822,1.02
+brightness x0.7,94.27,0.197,2.29
+rot 90 + hflip,95.76,0.1499,0.8

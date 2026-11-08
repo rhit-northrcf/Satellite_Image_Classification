@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff7ee">
+  <meta name="description" content="An interactive showcase of satellite image classification with 13-band EuroSAT images and a fine-tuned ResNet-50.">
+  <title>Earth, Classified — See Earth Differently</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="redesign.css">
+  <link rel="stylesheet" href="vibrant.css">
+  <link rel="stylesheet" href="concept.css">
+  <link rel="stylesheet" href="site-update.css">
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="concept-orbit">
+  <a class="skip-link" href="#overview">Skip to content</a>
+  <header class="site-header"><div class="shell nav">
+    <a class="brand" href="#top" aria-label="Earth Classified homepage"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>EARTH<span class="green-text">.</span>CLASSIFIED</span></a>
+    <nav class="nav-links" aria-label="Main navigation"><a href="#overview">The idea</a><a href="#architecture">The model</a><a href="#dataset">The images</a><a href="#evaluation">Results</a></nav>
+    <a class="nav-cta" href="#evaluation">See results <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main>
+    <section class="hero shell" id="top" aria-labelledby="hero-heading">
+  <div class="orbit-raster" aria-hidden="true"></div>
+  <div class="orbit-grid" aria-hidden="true"></div>
+  <div class="hero-text orbit-content">
+    <div class="overline"><span class="signal-dot"></span> A NEW VIEW OF OUR PLANET <span class="overline-divider"> / </span> EUROSAT</div>
+    <h1 id="hero-heading">The world,<br><em>from above.</em></h1>
+    <p class="hero-intro">10 land-cover classes. 13 spectral bands. One fine-tuned ResNet-50 learning to recognize the patterns below.</p>
+    <div class="hero-actions"><a class="btn primary" href="#evaluation">Explore the results <span>↗</span></a><a class="btn secondary" href="#dataset">Explore the imagery <span>↓</span></a></div>
+    <div class="orbit-meta"><span class="orbit-live"></span> S2 / MULTISPECTRAL IMAGERY <b>•</b> 27,000 EUROSAT PATCHES</div>
+  </div>
+  <div class="orbit-window">
+    <div class="orbit-window-top"><span>◉ &nbsp;LIVE VIEW / SAMPLE 07</span><span>▦ &nbsp; CLASS: RESIDENTIAL</span></div>
+    <div class="orbit-photo"><img src="assets/eurosat-gallery/07-residential-03.webp" alt="Residential land-cover example from the EuroSAT test set"><div class="orbit-reticle"></div><span class="orbit-photo-label">EUROSAT · RESIDENTIAL</span></div>
+    <div class="orbit-window-bottom"><span>RESNET-50 / 13-BAND INPUT</span><span class="orbit-success">● MODEL EVALUATED</span></div>
+    <div class="orbit-accuracy"><span>TEST ACCURACY</span><strong>96.56%</strong><small>2,759 TEST IMAGES</small></div>
+  </div>
+  <div class="hero-bottom-cue">SCROLL TO EXPLORE <span>↓</span></div>
+</section>
+
+    <section class="section shell overview" id="overview">
+      <div class="section-kicker">01 <span>/</span> THE IDEA</div>
+      <div class="overview-layout"><div><h2>Our planet is full<br>of <span class="muted">patterns.</span></h2><p class="statement">Can a pretrained image model recognize those patterns when every image has thirteen spectral channels instead of three?</p></div>
+        <div class="copy-side"><p>Satellite scenes contain information about agriculture, forests, water, industry, and settlement. Automatically labeling these regions can support large-scale environmental monitoring and land-cover analysis.</p><p>We adapted an ImageNet-pretrained ResNet-50 to process the <strong>13-band EuroSAT dataset</strong>, then trained a custom classifier using progressive fine-tuning. We evaluated it on the test split and examined which land types it confuses.</p><a class="text-link" href="https://github.com/phelber/eurosat" target="_blank" rel="noopener noreferrer">Explore the EuroSAT dataset <span aria-hidden="true">↗</span></a></div></div>
+      <div class="research-question"><span>THE RESEARCH QUESTION</span><p>Can a model trained to recognize everyday objects learn to read the planet from space?</p><div class="question-symbol" aria-hidden="true">?</div></div>
+    </section>
+
+    <section class="section method-band" id="architecture"><div class="shell">
+      <div class="section-kicker">02 <span>/</span> MODEL DESIGN</div><div class="section-heading"><h2>Built on ResNet.<br><span class="muted">Adapted for orbit.</span></h2><p>A familiar convolutional backbone with two deliberate changes: more input channels and a purpose-built classification head.</p></div>
+      <div class="architecture-flow" aria-label="Model architecture: 13-band image, new input convolution, ResNet-50 encoder, custom fully connected head, 10 class predictions">
+        <div class="flow-card flow-input"><div class="flow-symbol bands-symbol"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="flow-number">01 / INPUT</div><h3>13-channel image</h3><p>EuroSAT multispectral TIFF</p><strong>13 × H × W</strong></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-card"><div class="flow-symbol">▧</div><div class="flow-number">02 / ADAPT</div><h3>Input convolution</h3><p>RGB-informed 13-band Conv2d</p><strong>64 filters · 7 × 7</strong></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-card flow-emphasis"><div class="flow-symbol">◉</div><div class="flow-number">03 / TRANSFER</div><h3>ResNet-50</h3><p>ImageNet-pretrained backbone</p><strong>2,048 features</strong></div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-card"><div class="flow-symbol">⌘</div><div class="flow-number">04 / CLASSIFY</div><h3>Custom head</h3><p>Linear + ReLU layers</p><strong>2048 → 256 → 64 → 10</strong></div>
+      </div>
+      <div class="method-details"><div class="method-blurb"><div class="small-label">WHAT TRANSFERRED?</div><h3>Keep the visual knowledge. Change the interface.</h3><p>We replaced ResNet-50's original 3-channel convolution with a new 13-channel layer and replaced its final classification layer with an identity mapping. The remaining pretrained residual backbone feeds a three-layer head.</p><p>In the latest notebook, the 13-channel convolution is <em>initialized</em> using pretrained RGB filters for the visible bands and a scaled mean filter for the other bands. It is then trained on multispectral data.</p></div>
+        <div class="specs"><div><span>DATA INGESTION</span><strong>13-band TIFF · rasterio</strong></div><div><span>PREPROCESSING</span><strong>Per-band mean / std normalization</strong></div><div><span>LOSS / OPTIMIZER</span><strong>Cross-entropy · Adam</strong></div><div><span>MINIBATCH</span><strong>32 samples</strong></div><div><span>TRAINING STRATEGY</span><strong>12 frozen + 52 fine-tune epochs</strong></div><div><span>MODEL SELECTION</span><strong>Lowest validation loss per stage</strong></div></div></div>
+    </div></section>
+
+    <section class="section shell dataset" id="dataset"><div class="section-kicker">03 <span>/</span> THE DATA</div><div class="section-heading"><h2>Ten views of<br><span class="muted">the same planet.</span></h2><p>From dense forests to highways, EuroSAT provides ten scene categories for a 10-way classification task.</p></div>
+      <div class="gallery-intro"><span class="small-label">30 REAL EUROSAT TEST PATCHES</span><p>Select a class, then switch between three actual image samples. The previews map Sentinel-2 B04/B03/B02 to red, green and blue with a per-image 2–98 percentile contrast stretch; they are display representations, <strong>not</strong> the full 13-channel model inputs.</p></div>
+      <div class="class-grid" id="class-grid" aria-label="EuroSAT land-cover image gallery"></div>
+      <p class="small-note">All 30 images were exported from the uploaded EuroSAT 13-band TIFF test split. Each gallery card has its source filename in the image viewer. Colors are enhanced separately for each scene and should not be interpreted as calibrated true-color reflectance.</p>
+      <dialog id="gallery-dialog" class="gallery-dialog" aria-label="Expanded satellite sample"><button type="button" class="gallery-close" id="gallery-close" aria-label="Close enlarged image">×</button><img id="gallery-dialog-image" alt=""><div class="gallery-dialog-footer"><div><strong id="gallery-dialog-class"></strong><span id="gallery-dialog-source"></span></div><span>EUROSAT · SENTINEL-2 B04/B03/B02</span></div></dialog>
+    </section>
+
+    <section class="section training-band" id="training"><div class="shell"><div class="section-kicker">04 <span>/</span> TRAINING PROCESS</div><div class="section-heading"><h2>Learning, <span class="muted">in stages.</span></h2><p>See how accuracy improved across five rounds of fine-tuning. Each shaded section marks a new learning rate; the marker shows the lowest recorded validation loss.</p></div>
+      <div class="training-main"><div class="chart-panel"><div class="chart-top"><div><span class="small-label">52 FINE-TUNING EPOCHS</span><h3>Learning curves</h3></div><div class="segmented" role="group" aria-label="Training chart metric"><button type="button" class="active" id="view-accuracy" aria-pressed="true">Accuracy</button><button type="button" id="view-loss" aria-pressed="false">Loss</button></div></div><div class="chart-stage-heading"><span>LEARNING RATE STAGES</span><span>Hover chart points for both learning rates</span></div><div class="best-epoch-banner"><span class="best-epoch-icon">✦</span><span>LOWEST VALIDATION LOSS</span><strong>EPOCH 31 · 0.1280</strong><small>Selected by validation-loss criterion</small></div><div id="learning-chart" class="learning-chart" aria-label="Interactive training and validation accuracy chart with five marked learning-rate stages"></div><div class="lr-stage-rail" id="lr-stage-rail" aria-label="Five learning-rate stages aligned with the training graph"></div><div class="chart-key"><span><i class="key-train"></i>Training</span><span><i class="key-valid"></i>Validation</span><span class="chart-key-note">Epoch 31 has the lowest recorded validation loss. The 12 frozen warm-up epochs are not plotted (per-epoch metrics unavailable).</span></div></div>
+        <div class="stage-side"><div class="small-label">OPTIMIZATION SCHEDULE</div><h3>Five rounds, smaller steps</h3><p>Warm-up: 12 epochs at a learning rate of 1 × 10⁻³, with the residual backbone frozen and the adapted input convolution trainable. Then all parameters were unfrozen for five lower-rate stages.</p><div id="stage-list" class="stage-list"></div></div>
+      </div></div></section>
+
+    <section class="section results shell" id="evaluation"><div class="section-kicker">05 <span>/</span> THE RESULTS</div><div class="section-heading"><h2>What the model<br><span class="muted">actually learned.</span></h2><p>A closer look at how the model performed on 2,759 test images.</p></div>
+      <div class="metric-grid"><div class="metric"><div>TEST ACCURACY <span class="metric-sym">↗</span></div><strong id="metric-accuracy">96.56%</strong><p>Correct predictions across all test samples</p></div><div class="metric"><div>MACRO F1 <span class="metric-sym">✳</span></div><strong id="metric-f1">—</strong><p>Equal contribution from every class</p></div><div class="metric"><div>TEST SAMPLES <span class="metric-sym">▦</span></div><strong id="metric-count">2,759</strong><p>Test predictions represented below</p></div><div class="metric metric-contrast"><div>RANDOM BASELINE <span class="metric-sym">~</span></div><strong id="metric-baseline">9.75%</strong><p>Stratified dummy classifier, same test split</p></div></div>
+      <div class="matrix-container"><div class="matrix-title-row"><div><div class="small-label">PREDICTION ANALYSIS / 10 × 10</div><h3>Confusion matrix</h3><p>True class on each row, predicted class on each column. Select any cell to inspect the mistake or correct classification.</p></div><div class="segmented" role="group" aria-label="Confusion matrix display"><button class="active" id="matrix-raw" type="button" aria-pressed="true">Counts</button><button id="matrix-percent" type="button" aria-pressed="false">Normalized %</button></div></div>
+        <div class="matrix-layout"><div class="matrix-main"><div class="matrix-scroll"><div class="matrix-plot" id="matrix-plot"></div></div><div class="matrix-bottom"><div><span class="matrix-legend">LOW <i></i> HIGH</span><span class="matrix-caption">Darker cells = more samples within this view</span></div><a href="assets/confusion-matrix-original.png" download>Notebook counts plot ↓</a><a href="assets/confusion-matrix-normalized-original.png" download>Normalized % plot ↓</a></div></div><aside class="matrix-inspect" aria-live="polite"><span class="small-label">CELL INSPECTOR</span><div id="inspect-code">SELECT A CELL</div><h4 id="inspect-title">Explore predictions</h4><strong id="inspect-number">—</strong><p id="inspect-description">Click a matrix cell to see its true class, predicted class and share of that actual class.</p></aside></div>
+      </div>
+      <div class="analysis-grid"><article><div class="analysis-header"><span>01 / HIGHEST RECALL</span><span class="analysis-mark">◉</span></div><h3 id="best-class-name">Sea / Lake</h3><p id="best-class-copy">The strongest recognized class.</p></article><article><div class="analysis-header"><span>02 / MOST FREQUENT ERROR</span><span class="analysis-mark">↗</span></div><h3 id="confusion-name">Highway → Residential</h3><p id="confusion-copy">The most common incorrect class pairing.</p></article><article><div class="analysis-header"><span>03 / LOWEST RECALL</span><span class="analysis-mark">⌁</span></div><h3 id="weakest-class-name">Highway</h3><p id="weakest-class-copy">The category with the most room to improve.</p></article></div>
+
+      <div class="robustness" id="robustness">
+        <div class="robustness-heading"><div><span class="small-label">NEW CHECKPOINT / 12 TRANSFORMATIONS</span><h3>How well does it handle the unexpected?</h3><p>We re-tested the <strong>96.56% checkpoint</strong> after rotating, flipping, brightening, darkening, and adding noise to the same held-out test images. The standout change is resilience to Gaussian noise.</p></div><div class="robustness-key"><i></i>New-model accuracy</div></div>
+        <div class="noise-feature" aria-label="Gaussian noise robustness improved from 71.77 percent to 95.40 percent">
+          <div class="noise-feature-intro"><span class="noise-eyebrow">THE BIGGEST SURPRISE / GAUSSIAN NOISE</span><h4>From fragile to <em>remarkably resilient.</em></h4><p>Adding Gaussian noise at σ = 0.2 (in the normalized input space) barely changes the new model’s predictions: accuracy drops just 1.16 percentage points from its clean baseline.</p><div class="noise-delta">+23.63 <span>percentage points vs. previous checkpoint</span></div></div>
+          <div class="noise-compare"><div class="compare-row"><div><span>PREVIOUS INITIALIZATION</span><strong>71.77%</strong></div><div class="compare-track"><i class="previous" style="width:71.77%"></i></div></div><div class="compare-row"><div><span>RGB-INFORMED INITIALIZATION</span><strong>95.40%</strong></div><div class="compare-track"><i class="current" style="width:95.40%"></i></div></div><small>Same nominal noise strength; random noise is sampled anew each run.</small></div>
+        </div>
+        <div class="robustness-list" id="robustness-list"></div>
+        <p class="small-note">The new checkpoint is loaded from <code>Model State Archives/96.6%Acc.pth</code>. Right-angle rotations and flips remain strong; 30° and 45° rotations are challenging and may introduce artificial blank corners. These are transformation stress tests, not independent test datasets.</p>
+      </div>
+      <div class="class-breakdown"><div><span class="small-label">PER-CLASS PERFORMANCE</span><h3>Recall by land-cover category</h3><p>Percentage of each actual class correctly identified. This highlights weaknesses that a single accuracy figure can hide.</p></div><div class="recall-bars" id="recall-bars"></div></div>
+    </section>
+
+    <section class="section final-band" id="takeaways"><div class="shell takeaways"><div class="section-kicker">06 <span>/</span> WHAT'S NEXT</div><div class="takeaway-grid"><div><h2>There’s more to<br>the picture<span class="green-text">.</span></h2><p>The project demonstrates effective transfer learning from everyday imagery to multispectral remote sensing, while the confusion matrix shows exactly where broader context and additional evaluation could help.</p><a class="btn primary" href="#top">Back to the top <span aria-hidden="true">↑</span></a></div><div class="takeaway-notes"><div><span>01 / STRENGTH</span><p>Water-body scenes are especially well distinguished: 357 of 359 SeaLake samples in the new test were correctly classified.</p></div><div><span>02 / CHALLENGE</span><p>Pasture has the lowest recall (91.0%), with Highway (92.0%) and Permanent Crop (92.4%) also leaving room for improvement.</p></div><div><span>03 / NEXT EXPERIMENT</span><p>The new model holds 95.40% accuracy under Gaussian noise. Next: understand its greater sensitivity to 30° and 45° rotations.</p></div></div></div>
+        <div class="method-note"><strong>Evaluation provenance</strong><p>The evaluation and robustness results come from <strong>ResNetModel(7).ipynb</strong>, which loads <strong>Model State Archives/96.6%Acc.pth</strong>: <strong>96.56% clean test accuracy, 0.1289 loss, 2,759 test images</strong>. The confusion matrix represents 2,664 correct predictions; macro F1 is calculated from the matrix. The 52 fine-tuning epochs were reconstructed from the copied first 20 epoch logs plus 32 preserved notebook output epochs; epoch 31 records the lowest validation loss (0.1280). The 12 frozen warm-up epochs have no preserved per-epoch metrics. Gaussian-noise values are from separate randomized perturbation runs using the same nominal σ = 0.2, so small differences across reruns are expected. RGB gallery tiles illustrate labeled scenes, not scored individual predictions.</p></div>
+      </div></section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>EARTH<span class="green-text">.</span>CLASSIFIED</span></a><div><a href="https://arxiv.org/abs/1709.00029" target="_blank" rel="noopener noreferrer">EuroSAT paper ↗</a><a href="https://github.com/phelber/eurosat" target="_blank" rel="noopener noreferrer">Dataset source ↗</a><a href="#top">Back to top ↑</a></div><span class="footer-small">RESNET-50 × EUROSAT · PROJECT SHOWCASE</span></div></footer>
+</body></html>

@@ -1,0 +1,242 @@
+[
+  {
+    "class_id": 0,
+    "class_name": "AnnualCrop",
+    "image": "00-annualcrop-01.webp",
+    "source_tiff": "AnnualCrop/AnnualCrop_1731.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 0,
+    "class_name": "AnnualCrop",
+    "image": "00-annualcrop-02.webp",
+    "source_tiff": "AnnualCrop/AnnualCrop_2403.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 0,
+    "class_name": "AnnualCrop",
+    "image": "00-annualcrop-03.webp",
+    "source_tiff": "AnnualCrop/AnnualCrop_1737.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 1,
+    "class_name": "Forest",
+    "image": "01-forest-01.webp",
+    "source_tiff": "Forest/Forest_646.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 1,
+    "class_name": "Forest",
+    "image": "01-forest-02.webp",
+    "source_tiff": "Forest/Forest_909.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 1,
+    "class_name": "Forest",
+    "image": "01-forest-03.webp",
+    "source_tiff": "Forest/Forest_1007.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 2,
+    "class_name": "HerbaceousVegetation",
+    "image": "02-herbaceousvegetation-01.webp",
+    "source_tiff": "HerbaceousVegetation/HerbaceousVegetation_2283.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 2,
+    "class_name": "HerbaceousVegetation",
+    "image": "02-herbaceousvegetation-02.webp",
+    "source_tiff": "HerbaceousVegetation/HerbaceousVegetation_412.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 2,
+    "class_name": "HerbaceousVegetation",
+    "image": "02-herbaceousvegetation-03.webp",
+    "source_tiff": "HerbaceousVegetation/HerbaceousVegetation_2222.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 3,
+    "class_name": "Highway",
+    "image": "03-highway-01.webp",
+    "source_tiff": "Highway/Highway_1329.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 3,
+    "class_name": "Highway",
+    "image": "03-highway-02.webp",
+    "source_tiff": "Highway/Highway_1140.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 3,
+    "class_name": "Highway",
+    "image": "03-highway-03.webp",
+    "source_tiff": "Highway/Highway_255.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 4,
+    "class_name": "Industrial",
+    "image": "04-industrial-01.webp",
+    "source_tiff": "Industrial/Industrial_210.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 4,
+    "class_name": "Industrial",
+    "image": "04-industrial-02.webp",
+    "source_tiff": "Industrial/Industrial_2206.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 4,
+    "class_name": "Industrial",
+    "image": "04-industrial-03.webp",
+    "source_tiff": "Industrial/Industrial_217.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 5,
+    "class_name": "Pasture",
+    "image": "05-pasture-01.webp",
+    "source_tiff": "Pasture/Pasture_955.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 5,
+    "class_name": "Pasture",
+    "image": "05-pasture-02.webp",
+    "source_tiff": "Pasture/Pasture_285.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 5,
+    "class_name": "Pasture",
+    "image": "05-pasture-03.webp",
+    "source_tiff": "Pasture/Pasture_600.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 6,
+    "class_name": "PermanentCrop",
+    "image": "06-permanentcrop-01.webp",
+    "source_tiff": "PermanentCrop/PermanentCrop_691.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 6,
+    "class_name": "PermanentCrop",
+    "image": "06-permanentcrop-02.webp",
+    "source_tiff": "PermanentCrop/PermanentCrop_1416.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 6,
+    "class_name": "PermanentCrop",
+    "image": "06-permanentcrop-03.webp",
+    "source_tiff": "PermanentCrop/PermanentCrop_938.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 7,
+    "class_name": "Residential",
+    "image": "07-residential-01.webp",
+    "source_tiff": "Residential/Residential_2993.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 7,
+    "class_name": "Residential",
+    "image": "07-residential-02.webp",
+    "source_tiff": "Residential/Residential_471.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 7,
+    "class_name": "Residential",
+    "image": "07-residential-03.webp",
+    "source_tiff": "Residential/Residential_1080.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 8,
+    "class_name": "River",
+    "image": "08-river-01.webp",
+    "source_tiff": "River/River_1954.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 8,
+    "class_name": "River",
+    "image": "08-river-02.webp",
+    "source_tiff": "River/River_651.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 8,
+    "class_name": "River",
+    "image": "08-river-03.webp",
+    "source_tiff": "River/River_55.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 9,
+    "class_name": "SeaLake",
+    "image": "09-sealake-01.webp",
+    "source_tiff": "SeaLake/SeaLake_1220.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 9,
+    "class_name": "SeaLake",
+    "image": "09-sealake-02.webp",
+    "source_tiff": "SeaLake/SeaLake_1906.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  },
+  {
+    "class_id": 9,
+    "class_name": "SeaLake",
+    "image": "09-sealake-03.webp",
+    "source_tiff": "SeaLake/Bombay_000007.tif",
+    "split": "test.csv",
+    "display": "Sentinel-2 B04/B03/B02 true-color, per-image 2-98 percentile stretch"
+  }
+]
