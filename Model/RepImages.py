@@ -1,3 +1,7 @@
+#AI Generated script to get RGB images for a set of corresponding 13 channel images and put them into a format
+#Expected by the website
+
+
 import argparse
 import json
 from pathlib import Path
