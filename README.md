@@ -8,3 +8,5 @@ Dependencies that likely are not already installed: rasterio, torchmetrics
 Can be downloaded via:
 pip install rasterio
 pip install torchmetrics
+
+Dataset is the Eurosat dataset. The import script can be found at datasetimport.py
